@@ -25,6 +25,7 @@ body {
     padding: 0px 30px;
     width: 70%;
     min-width: 320px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .header-page {
@@ -247,6 +248,7 @@ body {
     .geral {
         width: 100%;
         padding: 0;
+        box-shadow: none;
     }
     .superior-box>div:nth-child(1)>div:nth-child(1) {
         align-items: center;
