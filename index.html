@@ -3,13 +3,36 @@
 
 <head>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felipe Moreira</title>
 </head>
 
-<body>
+<body onload="M.AutoInit()">
     <div class="geral">
+
+        <ul id="slide-out" class="sidenav">
+            <li><a href="#!"><i class="fas fa-laptop-code"></i>Trabalho</a></li>
+            <li><a href="#!"><i class="fas fa-user-edit"></i>Sobre mim</a></li>
+            <li><a href="#!"><i class="fas fa-address-book"></i>Contato</a></li>
+            <li><a class="subheader">Preferências</a></li>
+
+            <li>
+                <a style="display: flex; flex-direction: row;">
+                    <i class="fas fa-moon"></i>
+                    <span>Modo Escuro</span>
+                    <div class="switch">
+                        <label>
+                          <input type="checkbox">
+                          <span class="lever"></span>
+                        </label>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+
         <!-- HEADER -->
         <div class="header-page">
             <div>
@@ -24,10 +47,39 @@
                 <a href="#"> <span>Sobre mim</span> </a>
                 <a href="#"> <span>Contato</span> </a>
             </div>
+            <a href="#" data-target="slide-out" class="sidenav-trigger menuside"><i class="fas fa-bars"></i></a>
+        </div>
+
+        <div class="superior-box">
+            <div>
+                <div>
+                    <p>Olá, eu sou</p>
+                    <p>Felipe Moreira</p>
+                    <p>Programador</p>
+                </div>
+                <div>
+                    <a href="#"> <i class="fab fa-linkedin"></i></a>
+                    <a href="#"> <i class="fab fa-facebook-square"></i></a>
+                    <a href="#"> <i class="fab fa-instagram-square"></i></a>
+                    <a href="#"> <i class="fab fa-twitter-square"></i></a>
+                    <a href="#"> <i class="fab fa-github-square"></i></a>
+                </div>
+                <div>
+                    <a href="">
+                        <span>Ver meu resumo</span>
+                    </a>
+                </div>
+            </div>
+            <div class="dv-lottie">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_SGpOhb.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            </div>
         </div>
     </div>
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://kit.fontawesome.com/3d286f58f9.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script src="./script.js"></script>
 
 </html>
