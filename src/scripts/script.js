@@ -1,7 +1,10 @@
 function addAllCards() {
   let elem = document.getElementById("row-cards");
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://api.b7web.com.br/cinema/");
+  xhr.open(
+    "GET",
+    "https://raw.githubusercontent.com/felipeM0/port/master/src/scripts/bd.json"
+  );
 
   beforeSend();
 
@@ -15,13 +18,13 @@ function addAllCards() {
         itens.forEach((e) => {
           var card = `<div class="card">
                             <div class="card-image">
-                                <img src="${e.avatar}"/>
+                                <img src="${e.url_image}"/>
                             </div>
                             <div class="card-content">
-                                <p>Mobile</p>
+                                <p>${e.category}</p>
                                 <div>
-                                    <p>${e.titulo}</p>
-                                    <p>2020</p>
+                                    <p>${e.title}</p>
+                                    <p>${e.year}</p>
                                 </div>
                             </div>
                         </div>`;
