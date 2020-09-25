@@ -21,6 +21,11 @@ body {
     min-width: 320px;
 }
 
+p,
+span {
+    font-family: averia;
+}
+
 .geral {
     padding: 0px 30px;
     width: 70%;
@@ -119,6 +124,7 @@ body {
 .superior-box>div:nth-child(1)>div:nth-child(1)>p:nth-child(1) {
     font-size: 25px;
     color: rgb(165, 160, 160);
+    font-weight: normal;
 }
 
 .superior-box>div:nth-child(1)>div:nth-child(1)>p:nth-child(2) {
@@ -128,7 +134,7 @@ body {
 }
 
 .superior-box>div:nth-child(1)>div:nth-child(1)>p:nth-child(3) {
-    font-weight: bold;
+    font-weight: normal;
     color: rgb(104, 102, 102);
     letter-spacing: 2px;
 }
