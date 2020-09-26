@@ -290,6 +290,12 @@ a {
   transition: 0.1s;
 }
 
+.dv-cards .dv-options-card > div a.active {
+  border-bottom: 2px solid #333;
+  transform: scale(1.1, 1.1);
+  font-weight: bold;
+}
+
 .dv-cards .dv-options-card > div a:hover {
   border-bottom: 2px solid #333;
   transform: scale(1.1, 1.1);

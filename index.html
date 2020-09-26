@@ -15,7 +15,7 @@
     <title>Felipe Moreira</title>
   </head>
 
-  <body onload="M.AutoInit()">
+  <body>
     <div class="geral">
       <!-- HEADER -->
       <div class="header-page">
@@ -75,9 +75,9 @@
       <div class="dv-cards">
         <div class="dv-options-card">
           <div>
-            <a>Tudo</a>
-            <a>Mobile</a>
-            <a>Web</a>
+            <a id="1" onclick="sendNew('Tudo',this.id)">Tudo</a>
+            <a id="2" onclick="sendNew('Mobile',this.id)">Mobile</a>
+            <a id="3" onclick="sendNew('Web',this.id)">Web</a>
           </div>
         </div>
         <!--  -->
@@ -125,9 +125,26 @@
     crossorigin="anonymous"
   ></script>
   <script src="./src/scripts/script.js"></script>
-  <script src="./src/scripts/bd.js"></script>
 
   <script>
-    addAllCards();
+    window.onload = function () {
+      M.AutoInit();
+    };
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+      addAllCards("Tudo");
+    });
+
+    function sendNew(v, id) {
+      let el = document.getElementById(id).parentElement;
+      let elclick = document.getElementById(id);
+
+      addAllCards(v, elclick.classList.contains("active"));
+
+      for (let i = 0; i < 3; i++) {
+        el.children[i].classList.remove("active");
+      }
+      elclick.classList.add("active");
+    }
   </script>
 </html>
