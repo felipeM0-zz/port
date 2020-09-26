@@ -136,8 +136,8 @@
     });
 
     function sendNew(v, id) {
-      let el = document.getElementById(id).parentElement;
       let elclick = document.getElementById(id);
+      let el = elclick.parentElement;
 
       addAllCards(v, elclick.classList.contains("active"));
 

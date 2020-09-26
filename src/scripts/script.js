@@ -57,35 +57,8 @@ function beforeSend() {
                             <div class="ph-col-2 big"></div>
                         </div>
                     </div>
-                </div>
-                <div class="ph-item card">
-                    <div class="ph-col-4-mod">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="ph-picture responsive-img"/>
-                    </div>
-                    <div class="ph-col-8-mod">
-                        <div class="ph-row">
-                            <div class="ph-col-6"></div>
-                        </div>
-                        <div class="ph-row">
-                            <div class="ph-col-8 big"></div>
-                            <div class="ph-col-2 big"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ph-item card">
-                    <div class="ph-col-4-mod">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="ph-picture responsive-img"/>
-                    </div>
-                    <div class="ph-col-8-mod">
-                        <div class="ph-row">
-                            <div class="ph-col-6"></div>
-                        </div>
-                        <div class="ph-row">
-                            <div class="ph-col-8 big"></div>
-                            <div class="ph-col-2 big"></div>
-                        </div>
-                    </div>
                 </div>`;
-
-  elem.innerHTML += itens;
+  for (let i = 0; i < 5; i++) {
+    elem.innerHTML += itens;
+  }
 }
