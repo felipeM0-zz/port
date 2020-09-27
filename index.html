@@ -2,16 +2,13 @@
 <html lang="pt-br">
   <head>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./src/css/external/materialize.min.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"
+      href="./src/css/external/placeholder-loading.min.css"
     />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Felipe Moreira</title>
   </head>
 
@@ -55,20 +52,35 @@
             <a href="#"> <i class="fab fa-github-square"></i></a>
           </div>
           <div>
-            <a href="#">
+            <a href="#" onclick="showResume(this)">
               <span>Ver meu resumo</span>
             </a>
           </div>
         </div>
         <div class="dv-lottie">
-          <lottie-player
-            src="https://assets3.lottiefiles.com/packages/lf20_SGpOhb.json"
-            background="transparent"
-            speed="1"
-            style="width: 300px; height: 300px"
-            loop
-            autoplay
-          ></lottie-player>
+          <div id="flip-box" class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <lottie-player
+                  src="https://assets3.lottiefiles.com/packages/lf20_SGpOhb.json"
+                  background="transparent"
+                  speed="1"
+                  style="width: 300px; height: 300px"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
+              <div class="flip-box-back">
+                <p>
+                  Apaixonado por tecnologia, programação, filmes, música, HQ's,
+                  e tudo que envolve o mundo virtual. Atuo com experiência em
+                  JavaScript, CSS, HTML, React Native, C#, NodeJS, MySQL, entre
+                  outras tecnologias — algumas com aproximadamente 5 anos de
+                  prática. Bom, isso é um pouco sobre mim.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -113,12 +125,12 @@
     </ul>
   </body>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./src/scripts/external/materialize.min.js"></script>
   <script
     src="https://kit.fontawesome.com/3d286f58f9.js"
     crossorigin="anonymous"
   ></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="./src/scripts/external/lottie-player.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"
     integrity="sha512-Yrd3VqXNBUzyCQWVBlL65mTdE1snypc9E3XnGJba0zJmxweyJAqDNp6XSARxxAO6hWdwMpKQOIGE5uvGdG0+Yw=="
@@ -142,9 +154,19 @@
       addAllCards(v, elclick.classList.contains("active"));
 
       for (let i = 0; i < 3; i++) {
-        el.children[i].classList.remove("active");
+        el.children[i].classList.remove("active", "pulse");
       }
-      elclick.classList.add("active");
+      elclick.classList.add("active", "pulse");
+    }
+
+    function showResume(me) {
+      let elem = document.getElementById("flip-box");
+
+      elem.classList.contains("active")
+        ? (elem.classList.remove("active"),
+          (me.children[0].innerHTML = "Ver meu resumo"))
+        : (elem.classList.add("active"),
+          (me.children[0].innerHTML = "Ocultar resumo"));
     }
   </script>
 </html>

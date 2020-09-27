@@ -58,7 +58,7 @@ function beforeSend() {
                         </div>
                     </div>
                 </div>`;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) {
     elem.innerHTML += itens;
   }
 }
