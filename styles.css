@@ -48,6 +48,7 @@ body {
   padding: 0px 30px;
   width: 70%;
   min-width: 320px;
+  max-width: 1024px;
 }
 
 .header-page {
@@ -277,10 +278,9 @@ body {
 }
 
 .flip-box-back > p {
-  font-family: "Bilbo";
-  font-size: 24px;
+  font-size: 18px;
+  font-style: italic;
   color: #000;
-  font-weight: bold;
 }
 
 /*  */
@@ -369,6 +369,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 10px;
 }
 
 .dv-cards > .row .card {
@@ -443,9 +444,65 @@ body {
   margin: 0 10px !important;
 }
 
+.dv-footer {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.dv-footer div:nth-child(1) {
+  font-size: 12px;
+  text-align: right;
+  height: 68px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.dv-footer div:nth-child(1) a {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.dv-footer div:nth-child(2) img {
+  width: 60px;
+  opacity: 0.5;
+}
+
+.dv-footer-last {
+  display: none;
+}
+
+.dv-footer-last p {
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.li-dark > a {
+  display: flex;
+  flex-direction: row;
+}
+
+.lottie-player {
+  width: 300px;
+  height: 300px;
+}
+
 @media only screen and (max-width: 425px) {
   .dv-cards {
     border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  .dv-footer {
+    justify-content: center;
+  }
+  .dv-footer-last {
+    display: block;
   }
 }
 
