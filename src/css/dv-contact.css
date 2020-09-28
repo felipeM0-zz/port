@@ -1,0 +1,28 @@
+.dv-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dv-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.dv-row > i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+.dv-row > a {
+  cursor: pointer;
+}
+.dv-row > a,
+.dv-row > p {
+  color: #333;
+  font-size: 15px;
+  padding-top: 0.5px;
+}
+.dv-row:last-child {
+  margin-top: 2px;
+}

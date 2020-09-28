@@ -1,0 +1,33 @@
+.dv-footer {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.dv-footer div:nth-child(1) {
+  font-size: 12px;
+  text-align: right;
+  height: 68px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.dv-footer div:nth-child(1) a {
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.dv-footer div:nth-child(2) img {
+  width: 60px;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 425px) {
+  .dv-footer {
+    justify-content: center;
+  }
+}

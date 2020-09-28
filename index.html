@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <link rel="stylesheet" href="./src/css/header-page.css" />
+    <link rel="stylesheet" href="./src/css/superior-box.css" />
+    <link rel="stylesheet" href="./src/css/dv-cards.css" />
+    <link rel="stylesheet" href="./src/css/dv-footer.css" />
+    <link rel="stylesheet" href="./src/css/dv-contact.css" />
+
     <link rel="stylesheet" href="./src/css/external/materialize.min.css" />
     <link
       rel="stylesheet"
       href="./src/css/external/placeholder-loading.min.css"
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="./src/css/external/sweetalert2.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+
     <title>Felipe Moreira</title>
   </head>
 
@@ -28,9 +37,11 @@
           </div>
         </div>
         <div>
-          <a href="#"> <span>Trabalho</span> </a>
-          <a href="#"> <span>Sobre mim</span> </a>
-          <a href="#"> <span>Contato</span> </a>
+          <a href="#dv-cards"> <span>Trabalho</span> </a>
+          <a onclick="document.getElementById('resume').click()">
+            <span>Sobre mim</span>
+          </a>
+          <a onclick="contactSwal()"> <span>Contato</span> </a>
         </div>
         <a href="#" data-target="slide-out" class="sidenav-trigger menuside"
           ><i class="fas fa-bars"></i
@@ -45,14 +56,24 @@
             <p>Programador</p>
           </div>
           <div>
-            <a href="#"> <i class="fab fa-linkedin"></i></a>
-            <a href="#"> <i class="fab fa-facebook-square"></i></a>
-            <a href="#"> <i class="fab fa-instagram-square"></i></a>
-            <a href="#"> <i class="fab fa-twitter-square"></i></a>
-            <a href="#"> <i class="fab fa-github-square"></i></a>
+            <a onclick="sendMeToUrl('linkedin')">
+              <i class="fab fa-linkedin"></i
+            ></a>
+            <a onclick="sendMeToUrl('face')">
+              <i class="fab fa-facebook-square"></i
+            ></a>
+            <a onclick="sendMeToUrl('insta')">
+              <i class="fab fa-instagram-square"></i
+            ></a>
+            <a onclick="msgSwal('Aguarde','Não disponível ainda')">
+              <i class="fab fa-twitter-square"></i
+            ></a>
+            <a onclick="sendMeToUrl('git')">
+              <i class="fab fa-github-square"></i
+            ></a>
           </div>
           <div>
-            <a href="#" onclick="showResume(this)">
+            <a id="resume" onclick="showResume(this)">
               <span>Ver meu resumo</span>
             </a>
           </div>
@@ -84,7 +105,7 @@
         </div>
       </div>
 
-      <div class="dv-cards">
+      <div id="dv-cards" class="dv-cards">
         <div class="dv-options-card">
           <div>
             <a id="1" onclick="sendNew('Tudo',this.id)">Tudo</a>
@@ -95,9 +116,10 @@
         <!--  -->
         <div id="row-cards" class="row"></div>
       </div>
+
       <div class="dv-footer">
         <div>
-          <a href="mailto:felipemoreira.97@hotmail.com">Felipe Moreira</a>
+          <a onclick="sendMeToUrl('mail')">Felipe Moreira</a>
           <p>São Luís</p>
           <p>Maranhão</p>
           <p>Brasil</p>
@@ -105,9 +127,6 @@
         <div>
           <img src="./src/images/icon.png" alt="FM Icon" />
         </div>
-      </div>
-      <div class="dv-footer-last">
-        <p>Felipe Moreira - Todos os direitos reservados &copy;</p>
       </div>
     </div>
 
@@ -140,17 +159,15 @@
   </body>
 
   <script src="./src/scripts/external/materialize.min.js"></script>
-  <script
-    src="https://kit.fontawesome.com/3d286f58f9.js"
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://kit.fontawesome.com/3d286f58f9.js"></script>
   <script src="./src/scripts/external/lottie-player.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"
-    integrity="sha512-Yrd3VqXNBUzyCQWVBlL65mTdE1snypc9E3XnGJba0zJmxweyJAqDNp6XSARxxAO6hWdwMpKQOIGE5uvGdG0+Yw=="
-    crossorigin="anonymous"
-  ></script>
+  <script src="./src/scripts/external/sweetalert2@10.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+  <script src="./src/scripts/msgSwal.js"></script>
+  <script src="./src/scripts/urlsClick.js"></script>
+  <script src="./src/scripts/showResume.js"></script>
   <script src="./src/scripts/script.js"></script>
+  <script src="./src/scripts/callCard.js"></script>
 
   <script>
     window.onload = function () {
@@ -160,27 +177,5 @@
     document.addEventListener("DOMContentLoaded", function (event) {
       addAllCards("Tudo");
     });
-
-    function sendNew(v, id) {
-      let elclick = document.getElementById(id);
-      let el = elclick.parentElement;
-
-      addAllCards(v, elclick.classList.contains("active"));
-
-      for (let i = 0; i < 3; i++) {
-        el.children[i].classList.remove("active", "pulse");
-      }
-      elclick.classList.add("active", "pulse");
-    }
-
-    function showResume(me) {
-      let elem = document.getElementById("flip-box");
-
-      elem.classList.contains("active")
-        ? (elem.classList.remove("active"),
-          (me.children[0].innerHTML = "Ver meu resumo"))
-        : (elem.classList.add("active"),
-          (me.children[0].innerHTML = "Ocultar resumo"));
-    }
   </script>
 </html>

@@ -1,0 +1,189 @@
+.superior-box {
+  height: 350px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.superior-box > div:nth-child(1) {
+  height: 250px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 90%;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(1) > p:nth-child(1) {
+  font-size: 25px;
+  color: rgb(165, 160, 160);
+  font-weight: normal;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(1) > p:nth-child(2) {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(1) > p:nth-child(3) {
+  font-weight: normal;
+  color: rgb(104, 102, 102);
+  letter-spacing: 2px;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) {
+  width: 90%;
+  margin-top: 10px;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) a i {
+  font-size: 35px;
+  margin-right: 5px;
+  transition: 0.2s;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) a i:hover {
+  transform: scale(1.15, 1.15);
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) a {
+  cursor: pointer;
+  color: #333;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) a:nth-child(1):hover {
+  color: #2867b2;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) a:nth-child(2):hover {
+  color: #4267b2;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) a:nth-child(3):hover {
+  color: #f77737;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(2) a:nth-child(4):hover {
+  color: #1da1f2;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(3) {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 90%;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(3) a {
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  padding: 10px;
+  border-radius: 25px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(3) a span {
+  height: 50px;
+  width: 100px;
+  font-weight: bold;
+}
+
+.superior-box > div:nth-child(1) > div:nth-child(3) a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.dv-lottie {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  */
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 2000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-box.active .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-back {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-box-back > p {
+  font-size: 18px;
+  font-style: italic;
+  color: #000;
+}
+
+/*  */
+
+.lottie-player {
+  width: 300px;
+  height: 300px;
+}
+
+@media only screen and (max-width: 880px) {
+  .superior-box {
+    display: block;
+    height: auto;
+  }
+  .superior-box > div:nth-child(1),
+  .geral {
+    width: 100%;
+    padding: 0;
+  }
+  .superior-box > div:nth-child(1) > div:nth-child(1) {
+    align-items: center;
+  }
+  .superior-box > div:nth-child(1) > div:nth-child(2),
+  .superior-box > div:nth-child(1) > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+  }
+  .dv-lottie {
+    width: 100%;
+  }
+}

@@ -5,7 +5,7 @@ function addAllCards(type, active) {
     let xhr = new XMLHttpRequest();
     xhr.open(
       "GET",
-      "https://raw.githubusercontent.com/felipeM0/port/master/src/scripts/bd.json"
+      "https://raw.githubusercontent.com/felipeM0/port/master/src/data/bd.json"
     );
 
     beforeSend();

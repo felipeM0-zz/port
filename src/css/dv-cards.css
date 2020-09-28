@@ -1,0 +1,118 @@
+.dv-cards {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.dv-cards .dv-options-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dv-cards .dv-options-card > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+  width: 300px;
+  height: 30px;
+}
+
+.dv-cards .dv-options-card > div a {
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+  transition: 0.1s;
+}
+
+.dv-cards .dv-options-card > div a:hover {
+  border-bottom: 2px solid #333;
+}
+
+.dv-cards .dv-options-card > div a.active {
+  background-color: #333;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 15px;
+  border: none;
+  padding-bottom: 3px;
+}
+
+.dv-cards > .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.dv-cards > .row .card {
+  width: 250px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.dv-cards > .row .card .card-image {
+  height: 200px;
+}
+
+.dv-cards > .row .card .card-image img {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.dv-cards > .row .card .card-content {
+  padding: 10px 15px;
+  margin-top: 5px;
+}
+
+.dv-cards > .row .card .card-content > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.dv-cards > .row .card .card-content > p {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.dv-cards > .row .card .card-content > div p {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.dv-cards > .row .card .card-content > div p:nth-child(1) {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card {
+  transition: 0.3s !important;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03, 1.03);
+  border-radius: 5px !important;
+}
+
+@media only screen and (max-width: 425px) {
+  .dv-cards {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+}
