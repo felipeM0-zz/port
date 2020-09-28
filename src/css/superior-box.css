@@ -31,6 +31,7 @@
 
 .superior-box > div:nth-child(1) > div:nth-child(1) > p:nth-child(2) {
   font-size: 40px;
+  transition: .3s;
   font-weight: bold;
   margin-bottom: 2px;
 }
@@ -185,5 +186,9 @@
   }
   .dv-lottie {
     width: 100%;
+  }
+  .superior-box > div:nth-child(1) > div:nth-child(1) > p:nth-child(2) {
+    font-size: 32px;
+    text-align: center;
   }
 }
